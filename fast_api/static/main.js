@@ -3,7 +3,7 @@ function checkHealth() {
     .then((response) => {
       if (!response.ok) {
         return response.json().then((errorData) => {
-          throw new Error(errorData.detail || "Unknown error");
+          throw new Error(errorData.detail || "Невідома помилка");
         });
       }
       return response.json();
@@ -20,7 +20,7 @@ function checkHealth() {
         errorMessage = errorMessage.substring(7);
       }
       document.getElementById("response").innerHTML =
-        "Request error: " + errorMessage;
+        "Помилка запиту: " + errorMessage;
       document.getElementById("response").className = "response error";
     });
 }
